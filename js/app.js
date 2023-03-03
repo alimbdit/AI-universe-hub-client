@@ -19,9 +19,10 @@ const showData = (data, limit) => {
     seeMore.classList.add("hidden");
   }
 
-
+ let count = 0;
   data.forEach((element) => {
-    console.log(element);
+    count++;
+    console.log(element, count);
     const card = document.createElement("div");
     
     card.classList.add(
@@ -41,20 +42,10 @@ const showData = (data, limit) => {
 
     <div class="pt-6">
         <h3 class="text-2xl font-semibold tracking-tight text-color-dark dark:text-white">Features</h3>
-        <div class="flex items-center mt-2.5 mb-5">
-            <ol id="feature-list" class="list-decimal px-6 text-color-light">
-            ${element.features.length !== 0 ?
+        <div class="h-[80px] mt-2.5 mb-5">
+            <ol id="feature-list-${count}" class="list-decimal pl-6 text-color-light">
 
-                    element.features.map(feature => {
-                        const listItem = document.createElement('li');
-                        listItem.innerText = feature;
-                        
-                         console.log(listItem);
-                         return listItem;
-                    }).forEach(listItem => {
-                        // document.querySelector('ol').appendChild(listItem);
-                    }) : 'Not available'
-                } 
+                
             </ol>
         </div>
         <hr class="border mb-3">
@@ -83,19 +74,24 @@ const showData = (data, limit) => {
         </div>
     </div>
     `;
-    // if(element.features.length !== 0){
-    //     const list = document.querySelector('ol');
-    //     element.features.forEach(feature => {
-    //         const listItem = document.createElement('li');
-    //         listItem.innerText = feature;
+
+    cardContainer.appendChild(card);
+
+    if(element.features.length !== 0){
+
+        const list = document.getElementById(`feature-list-${count}`);
+        console.log(list);
+        element.features.forEach(feature => {
+            const listItem = document.createElement('li');
+            listItem.innerText = feature;
 
             
-    //         list.appendChild(listItem);
-    //         console.log(feature);
-    //     });
-    //     list.innerText='';
-    // }
-    cardContainer.appendChild(card);
+            list.appendChild(listItem);
+            console.log(feature);
+        });
+        
+        // list.innerText='';
+    }
     toggleSpinner(false);
   });
  
@@ -114,9 +110,8 @@ const toggleSpinner = (isLoading) => {
     }
 }
 
-toggleSpinner(true)
+toggleSpinner(true);
 
 getData(6);
-
 
 
