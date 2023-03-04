@@ -284,8 +284,3 @@ function byDate (first, second) {
 }
 
 
-// document.getElementById('sort-btn').addEventListener('click', function(){
-//   const sortedData = data.slice().sort(byDate);
-//   getData(sortedData);
-
-// });
