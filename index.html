@@ -172,25 +172,26 @@
 
     <input type="checkbox" id="myModal" class="modal-toggle" />
     <div class="modal ">
-        <!-- <div class="modal-box relative"> -->
+ 
 
         <div class="modal-box relative w-full h-screen max-w-4xl md:h-auto m-10">
+            <div class="flex items-start justify-between rounded-t dark:border-gray-600 relative">
+                <label for="myModal" id="close" type="button"
+                class="z-50 absolute -top-4 -right-4 bg-btn-color-normal  hover:bg-btn-color-hover hover:text-white rounded-full text-white text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-btn-color-hover dark:hover:text-white"
+                >
+                <svg class="w-5 h-5 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </label>
+            </div>
 
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg  dark:bg-gray-700">
                 <!-- Modal header -->
 
-                <div class="flex items-start justify-between rounded-t dark:border-gray-600 relative">
-                    <label for="myModal" id="close" type="button"
-                    class="absolute -top-4 -right-4 bg-btn-color-normal  hover:bg-btn-color-hover hover:text-white rounded-full text-white text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-btn-color-hover dark:hover:text-white"
-                    >
-                    <svg class="w-5 h-5 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </label>
-                </div>
+
                 <div id="modal-container" class="card-container flex flex-col-reverse md:flex-row gap-3 md:gap-5 justify-center p-0s md:p-0">
 
 
