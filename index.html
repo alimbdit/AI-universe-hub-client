@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-----------------------------flowbite link---------------------  -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css"  rel="stylesheet" />
+    <!-----------------------------flowbite link---------------------  -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
 
     <!-- -------------------tailwind link----------------  -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -70,7 +72,10 @@
 
 
         </section>
+
+
     </header>
+
 
 
 
@@ -79,6 +84,8 @@
     -------------------------------------------------------------- -->
 
     <main>
+
+
         <!-- ------------------------------------------------------
         --------------------------card--------------------------
     -------------------------------------------------------------- -->
@@ -148,124 +155,60 @@
 
             </section>
 
-            <div class="my-10 text-center ">
-                <button id="see-more" onclick="getData()" type="button"
-                    class="hidden focus:outline-none text-white bg-btn-color-normal hover:bg-btn-color-hover focus:ring-2 focus:ring-red-200 font-semibold rounded-lg text-xl px-6 py-4 mr-2 mb-2 dark:bg-btn-color-normal dark:hover:bg-btn-color-hover dark:focus:ring-red-200">See
-                    More</button>
-            </div>
+            
 
-        </section>
-
-        <!-- ------------------------------------------------------
+    <!-- ------------------------------------------------------
         --------------------------modal--------------------------
     -------------------------------------------------------------- -->
-    <section>
 
-        <!-- Modal toggle -->
-        <button data-modal-target="staticModal" data-modal-toggle="staticModal"
-            class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            type="button">
-            Toggle modal
-        </button>
 
-        <!-- Main modal -->
-        <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
-            class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
-            <div class="relative w-full h-full max-w-4xl md:h-auto m-10">
-                <!-- Modal content -->
-                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                    <!-- Modal header -->
-                    <div class="flex items-start justify-between rounded-t dark:border-gray-600 relative">
-                        <button type="button"
-                            class="absolute -top-4 -right-4 bg-btn-color-normal  hover:bg-btn-color-hover hover:text-white rounded-full text-white text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-btn-color-hover dark:hover:text-white"
-                            data-modal-hide="staticModal">
-                            <svg class="w-5 h-5 " fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                    </div>
+ 
 
-                    <div
-                        class="card-container flex flex-col-reverse md:flex-row gap-3 md:gap-5 justify-center p-3 md:p-5">
-                        <!-- card 1 -->
-                        <div
-                            class="p-6 bg-btn-color-normal/[.06]  border border-btn-color-normal rounded-xl shadow dark:bg-btn-color-normal/[.06]  dark:border-gray-700 w-full">
+    <!-- Main modal -->
 
-                            <h3 class="text-2xl font-semibold tracking-tight text-color-dark dark:text-white ">
-                                ChatGPT is an
-                                AI-powered chatbot platform that uses OpenAI's GPT technology to simulate human
-                                conversation.
-                            </h3>
-                            <div class="my-6 flex flex-col md:flex-row gap-4 items-center md:justify-between">
-                                <p
-                                    class="w-3/4 md:w-full  py-3  text-center leading-5 bg-white text-green-700 font-bold rounded-2xl">
-                                    $10/ <br> month <br> Basic</p>
-                                <p
-                                    class="w-3/4 md:w-full  py-3  text-center leading-5 bg-white text-amber-500 font-bold rounded-2xl">
-                                    $50/ <br> month <br> Pro</p>
-                                <p
-                                    class="w-3/4 md:w-full  py-3  text-center leading-5 bg-white text-btn-color-normal font-bold rounded-2xl">
-                                    Contact <br> us <br> Enterprise</p>
-                            </div>
+    <!-- The button to open modal -->
+    <!-- <label for="myModal" class="btn">open modal</label> -->
 
-                            <!-- feature and Integrations -->
-                            <div class="flex flex-col md:flex-row gap-5 md:gap-2 justify-between">
-                                <div class="feature ">
-                                    <h3
-                                        class="text-2xl font-semibold tracking-tight text-color-dark dark:text-white ">
-                                        Features</h3>
-                                    <ol class="list-disc text-color-light pl-6 mt-4">
-                                        <li>Customizable responses</li>
-                                        <li>Customizable responses</li>
-                                        <li>Customizable responses</li>
-                                    </ol>
-                                </div>
-                                <div class="integrations ">
-                                    <h3
-                                        class="text-2xl font-semibold tracking-tight text-color-dark dark:text-white ">
-                                        Integrations</h3>
-                                    <ol class="list-disc text-color-light pl-6 mt-4">
-                                        <li>FB Messenge</li>
-                                        <li>FB Messenge</li>
-                                        <li>FB Messenge</li>
 
-                                    </ol>
-                                </div>
-                            </div>
+    <input type="checkbox" id="myModal" class="modal-toggle" />
+    <div class="modal ">
+        <!-- <div class="modal-box relative"> -->
 
-                        </div>
-                        <!-- card 2 -->
-                        <div
-                            class="p-6 bg-white border border-gray-200 rounded-xl shadow dark:bg-gray-800 dark:border-gray-700 w-full">
+        <div class="modal-box relative w-full h-screen max-w-4xl md:h-auto m-10">
 
-                            <div class="relative">
-                                <img class="rounded-xl w-full" src="https://picsum.photos/200"
-                                    alt="product image" />
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg  dark:bg-gray-700">
+                <!-- Modal header -->
 
-                                <button type="button"
-                                    class="absolute top-3 right-3 focus:outline-none text-white bg-btn-color-normal hover:bg-btn-color-hover focus:ring-1 focus:ring-red-200 font-semibold rounded-lg px-4 py-2 ">94% accuracy</button>
-                            </div>
+                <div class="flex items-start justify-between rounded-t dark:border-gray-600 relative">
+                    <label for="myModal" id="close" type="button"
+                    class="absolute -top-4 -right-4 bg-btn-color-normal  hover:bg-btn-color-hover hover:text-white rounded-full text-white text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-btn-color-hover dark:hover:text-white"
+                    >
+                    <svg class="w-5 h-5 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </label>
+                </div>
+                <div id="modal-container" class="card-container flex flex-col-reverse md:flex-row gap-3 md:gap-5 justify-center p-0s md:p-0">
 
-                            <div class="pt-6 text-center">
-                                <h3 class="text-2xl font-semibold tracking-tight text-color-dark dark:text-white ">
-                                    Hi, how are you
-                                    doing today?</h3>
-                                <p class="text-color-light">I'm doing well, thank you for asking. How can I assist
-                                    you today?</p>
 
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
+        <!-- </div> -->
+    </div>
 
-    </section>
 
 
+
+        </section>
+        <div class="my-10 text-center ">
+            <button id="see-more" onclick="getData(12)" type="button"
+                class="hidden focus:outline-none text-white bg-btn-color-normal hover:bg-btn-color-hover focus:ring-2 focus:ring-red-200 font-semibold rounded-lg text-xl px-6 py-4 mr-2 mb-2 dark:bg-btn-color-normal dark:hover:bg-btn-color-hover dark:focus:ring-red-200">See
+                More</button>
+        </div>
 
 
 
@@ -274,12 +217,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
     <!-- ------------------------------------------------------------
     --------------------------scrips----------------------------
 --------------------------------------------------------------- -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
-    <script src="js/utilities.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script src="js/app.js"></script>
+    <!-- <script src="js/utilities.js"></script> -->
 </body>
 
 </html>
