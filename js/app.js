@@ -188,7 +188,7 @@ const showModalData = (data) => {
       <div class="pt-6 text-center">
           <h3 class="text-2xl font-semibold tracking-tight text-color-dark dark:text-white ">${data.input_output_examples !== null ? data.input_output_examples[0].input : "Hi, can you give any example?" }
               </h3>
-          <p class="text-color-light">${data.input_output_examples !== null ? data.input_output_examples[0].output : "No! Not Yet! Take a break!!!" }/p>
+          <p class="text-color-light">${data.input_output_examples !== null ? data.input_output_examples[0].output : "No! Not Yet! Take a break!!!" }</p>
 
       </div>
   </div>
