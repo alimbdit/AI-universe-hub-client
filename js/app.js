@@ -1,13 +1,14 @@
-const getData = (limit, isSort) => {
+const getData = (isSort, limit) => {
   const URL = `https://openapi.programming-hero.com/api/ai/tools`;
 
   fetch(URL)
     .then((res) => res.json())
-    .then((data) => showData(data.data.tools, limit, isSort))
-    .finally(() => {});
+    .then((data) => showData(isSort, data.data.tools, limit))
+    .catch(error => console.log(error));
 };
 
-const showData = (data, limit, isSort) => {
+const showData = ( isSort, data, limit) => {
+
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerText = "";
   const seeMore = document.getElementById("see-more");
@@ -15,16 +16,22 @@ const showData = (data, limit, isSort) => {
 
   if (limit && data.length > limit) {
     data = data.slice(0, limit);
-
+    if(isSort){
+      data.sort(byDate);
+    }
     seeMore.classList.remove("hidden");
   } else {
     seeMore.classList.add("hidden");
   }
 
+  if(isSort){
+    data.sort(byDate);
+  }
+
   let count = 0;
   data.forEach((element) => {
     count++;
-    // console.log(element, count);
+    console.log(element, count);
     const card = document.createElement("div");
 
     card.classList.add(
@@ -107,7 +114,8 @@ const toggleSpinner = (isLoading) => {
 };
 
 toggleSpinner(true);
-getData(6);
+
+getData(false, 6);
 
 function openModal() {
   document.getElementById("myModal").checked = true;
@@ -178,7 +186,7 @@ const showModalData = (data) => {
       </div>
 
       <div class="pt-6 text-center">
-          <h3 class="text-2xl font-semibold tracking-tight text-color-dark dark:text-white ">${data.input_output_examples !== null ? data.input_output_examples[0].input : "Hi, how are you doing today?" }
+          <h3 class="text-2xl font-semibold tracking-tight text-color-dark dark:text-white ">${data.input_output_examples !== null ? data.input_output_examples[0].input : "Hi, can you give any example?" }
               </h3>
           <p class="text-color-light">${data.input_output_examples !== null ? data.input_output_examples[0].output : "No! Not Yet! Take a break!!!" }/p>
 
@@ -260,7 +268,7 @@ const showModalData = (data) => {
     document.getElementById("modal-integrations").innerText = "No data Found";
   }
 };
-// getModalData('01')
+
 
 function pricing(name, price) {
   const spanPricing = document.createElement("span");
@@ -269,10 +277,15 @@ function pricing(name, price) {
   `;
   return spanPricing;
 }
-function accuracyButton(name, price) {
-  const spanPricing = document.createElement("span");
-  spanPricing.innerHTML = `
-  ${price} <br> ${name}
-  `;
-  return spanPricing;
+
+
+function byDate (first, second) {
+  return new Date(first.published_in).valueOf() - new Date(second.published_in).valueOf()
 }
+
+
+// document.getElementById('sort-btn').addEventListener('click', function(){
+//   const sortedData = data.slice().sort(byDate);
+//   getData(sortedData);
+
+// });
