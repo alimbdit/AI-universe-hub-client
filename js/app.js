@@ -173,21 +173,31 @@ const showModalData = (data) => {
         }"}
               alt="product image" />
 
-          <button type="button"
-              class="absolute top-3 right-3 focus:outline-none text-white bg-btn-color-normal hover:bg-btn-color-hover focus:ring-1 focus:ring-red-200 font-semibold rounded-lg px-4 py-2 ">94% accuracy</button>
+          <button id="accuracy-btn" type="button"
+              class="absolute top-3 right-3 focus:outline-none text-white bg-btn-color-normal hover:bg-btn-color-hover focus:ring-1 focus:ring-red-200 font-semibold rounded-lg px-4 py-2 ">${data.accuracy.score ? data.accuracy.score*100 : '' }% accuracy</button>
       </div>
 
       <div class="pt-6 text-center">
-          <h3 class="text-2xl font-semibold tracking-tight text-color-dark dark:text-white ">
-              Hi, how are you
-              doing today?</h3>
-          <p class="text-color-light">I'm doing well, thank you for asking. How can I assist
-              you today?</p>
+          <h3 class="text-2xl font-semibold tracking-tight text-color-dark dark:text-white ">${data.input_output_examples !== null ? data.input_output_examples[0].input : "Hi, how are you doing today?" }
+              </h3>
+          <p class="text-color-light">${data.input_output_examples !== null ? data.input_output_examples[0].output : "No! Not Yet! Take a break!!!" }/p>
 
       </div>
   </div>
 
   `;
+
+
+  // input output
+
+  if(data.accuracy.score === null){
+    document.getElementById('accuracy-btn').classList.add('hidden');
+  }
+  else{
+    document.getElementById('accuracy-btn').classList.remove('hidden');
+  }
+
+
 
 
   // pricing
@@ -216,14 +226,14 @@ const showModalData = (data) => {
     enterprisePrice.appendChild(pricing("", "Contact us"));
   }
 
-  // console.log(Object.keys(data.features).length);
+
 
 
   // features
 
   if (Object.keys(data.features).length !== 0) {
     const list = document.getElementById("modal-feature");
-    // console.log(data.features['2'].feature_name);
+  
 
     for (const feature in data.features) {
       const listItem = document.createElement("li");
@@ -233,6 +243,10 @@ const showModalData = (data) => {
   } else {
     document.getElementById("modal-feature").innerText = "No data Found";
   }
+
+
+
+  // modal-integrations
 
   if (data.integrations !== null) {
     const list = document.getElementById("modal-integrations");
@@ -249,6 +263,13 @@ const showModalData = (data) => {
 // getModalData('01')
 
 function pricing(name, price) {
+  const spanPricing = document.createElement("span");
+  spanPricing.innerHTML = `
+  ${price} <br> ${name}
+  `;
+  return spanPricing;
+}
+function accuracyButton(name, price) {
   const spanPricing = document.createElement("span");
   spanPricing.innerHTML = `
   ${price} <br> ${name}
